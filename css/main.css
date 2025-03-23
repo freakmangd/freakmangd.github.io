@@ -1,0 +1,15 @@
+body {
+    font-family: VictorMono, 'Courier New', Courier, monospace;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: block;
+}
+
+@font-face {
+    font-family: VictorMono;
+    src: url("../assets/VictorMono-Regular.ttf");
+}
+
+canvas {
+    display: block;
+}
