@@ -1,18 +1,18 @@
 const posts = [
-    "zig pointers", "posts/zig_pointers.html",
+    "zig pointers", "/posts/zig_pointers.html",
 ];
 
-window.onload = function () {
-    let fileName = location.href.split("/").slice(-1); 
-    let title_link = "../index.html"
-    if (fileName == "index.html") {
-        title_link = "#";
+window.onload = function() {
+    let d = "";
+    if (location.href.startsWith("file:///")) {
+        let io_idx = location.href.indexOf(".io")
+        d = location.href.slice(0, io_idx + 3);
     }
 
     let header = document.getElementsByTagName("header");
     if (header.length > 0) {        
         header[0].innerHTML = `
-            <h1><a id="title" href="${title_link}">spinningmonkeyjpeg</a></h1>
+            <h1><a id="title" href="${d}/index.html">spinningmonkeyjpeg</a></h1>
         `;
     }
 
@@ -32,8 +32,7 @@ window.onload = function () {
     `;
 
     for (let i = 0; i < posts.length; i += 2) {
-        sidebar_html += "<li><a href=\"" + posts[i + 1] +
-            "\">" + posts[i] + "</a></li>\n"
+        sidebar_html += `<li><a href="${d}${posts[i + 1]}">${posts[i]}</a></li>\n`;
     }
 
     sidebar_html += "</ul>";
