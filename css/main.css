@@ -1,8 +1,49 @@
+/*:root {
+/*    --dark: #69626D;
+/*    --light: #BCAF9C;
+/*    --text: #CBBEB3;
+/*    --highlight: #E8C7DE;
+/*    --lowlight: #D9BDC5;
+/*}
+ */
+
+html {
+    background-color: var(--dark);
+}
+
+:root {
+    --dark: #1b1725ff;
+    --dark-highlight: #534b62ff;
+    --light: #a499b3ff;
+    --dark-text: #d0bcd5ff;
+    --text: #F0F0C9;
+}
+
 body {
     font-family: VictorMono, 'Courier New', Courier, monospace;
     padding-left: 2em;
     padding-right: 2em;
     display: block;
+    color: var(--text);
+}
+
+a {
+    color: var(--dark-text);
+    text-decoration: none;
+}
+
+/* doesnt work for some reason :( */
+a :hover {
+    text-decoration: underline;
+}
+
+a#title {
+    color: var(--text);
+}
+
+hr {
+    margin-top: 20px;
+    color: var(--dark-highlight);
 }
 
 @font-face {
@@ -12,4 +53,14 @@ body {
 
 canvas {
     display: block;
+}
+
+ul.sidebar {
+    margin-left: -20px;
+}
+
+#sidebar {
+    float: right;
+    margin-left: 30px;
+    min-width: 150px;
 }
